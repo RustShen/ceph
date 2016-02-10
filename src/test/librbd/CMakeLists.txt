@@ -42,6 +42,7 @@ add_executable(unittest_librbd
   ${CMAKE_SOURCE_DIR}/src/common/ContextCompletion.cc
   $<TARGET_OBJECTS:parse_secret_objs>
   )
+add_ceph_unittest(unittest_librbd ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unittest_librbd)
 target_compile_definitions(unittest_librbd PUBLIC "-DTEST_LIBRBD_INTERNALS")
 set_target_properties(unittest_librbd PROPERTIES COMPILE_FLAGS
   ${UNITTEST_CXX_FLAGS})
@@ -61,7 +62,6 @@ target_link_libraries(unittest_librbd
   rbd_types
   osdc
   global
-  ${UNITTEST_LIBS}
   radostest
   keyutils
   )
