@@ -456,7 +456,10 @@ add_dependencies(check
   ceph_erasure_code_non_regression
   ceph_erasure_code
   ceph-disk
-  ceph-detect-init)
+  ceph-detect-init
+  cython_rados
+  cython_rbd
+  cython_cephfs)
 
 add_ceph_test(test-ceph-helpers.sh ${CMAKE_SOURCE_DIR}/src/test/test-ceph-helpers.sh)
 add_ceph_test(erasure-decode-non-regression.sh ${CMAKE_SOURCE_DIR}/qa/workunits/erasure-code/encode-decode-non-regression.sh)
